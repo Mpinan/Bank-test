@@ -6,10 +6,16 @@ class BankAccount
   end
 
   def deposit(amount)
-    @balance += amount
+    d = Time.now.strftime("%m/%d/%Y")
+    @balance += amount.to_i
+    "Deposit of #{amount} made #{d}" 
+
   end
 
   def withdraw(amount)
     @balance -= amount
+    d = Time.now.strftime("%m/%d/%Y")
+    "Withdraw of #{amount} made #{d}" 
   end
+
 end

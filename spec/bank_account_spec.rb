@@ -16,5 +16,6 @@ describe BankAccount do
     subject.withdraw(500)
     expect(subject.balance).to be 500
   end
+
   
 end

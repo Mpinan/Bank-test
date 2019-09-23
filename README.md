@@ -1,5 +1,25 @@
 # Bank-test
 
+## User stories 
+
+As a user
+So I can be organize with money
+I'd like to have a bank account
+
+As a user so I can see my money
+I'd like to see my balance
+
+As a user
+So I can spend money from my card
+I'd like to deposit money
+
+As a user
+So I can user the money in my bank account
+I'd like to withdraw money
+
+As a user
+So I can see when I made any transaction
+I'd like to see a date
 
 ### Acceptance criteria
 
