@@ -8,9 +8,9 @@ class Statement
   end
 
   def display
-    p 'date || credit || debit || balance '
+    puts 'date || credit || debit || balance'
     @transaction.map do |list|
-      p list.join(' || ')
+      puts list.join(' || ')
     end
   end
 end
