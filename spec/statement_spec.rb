@@ -1,13 +1,16 @@
-# require 'statement'
+# frozen_string_literal: true
 
-# describe Statement do
-#   it 'return a statement with as a table' do
-#     expect(subject.sheet).to eq("date || credit || debit || balance")
-#   end
-#  it 'returns the statement as a table' do
-#     statement = Statement.new
-#     statement.sheet = [15.00, 0, 15.00]
-#     expect(statement.format).to eq Date.today.strftime('%d/%m/%Y') + ' || 15.00 ||  || 15.00'
-#   end
+require 'statement'
 
-# end
+describe Statement do
+
+  let(:account) { BankAccount.new }
+  let(:statement) { Statement.new }
+
+  it 'returns the statement as a table' do
+     account.deposit(1000)
+     account.withdraw(500)
+     expect(account.print_statement).to include Date.today.strftime("%d/%m/%Y") + ' || 1000 ||  || 1000'
+   end
+
+end

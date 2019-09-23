@@ -1,14 +1,16 @@
-# class Statement
+# frozen_string_literal: true
 
-#   def initialize(account = BankAccount.new)
-#     @sheet = account.transaction
-#   end
+class Statement
+  attr_reader :transaction
 
-#   def display
-#     p 'date || credit || debit || balance'
-#     @sheet.map do |transaction|
-#       return @sheet.join(" || ")
-#     end
+  def initialize
+    @transaction = []
+  end
 
-#   end
-# end
+  def display
+    p 'date || credit || debit || balance '
+    @transaction.map do |list|
+      p list.join(' || ')
+    end
+  end
+end

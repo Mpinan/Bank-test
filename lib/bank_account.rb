@@ -1,38 +1,49 @@
-class BankAccount
-  attr_reader :balance, :transaction, :debit, :credit
+# frozen_string_literal: true
 
-  def initialize
+require_relative 'statement'
+
+class BankAccount
+  attr_reader :balance, :transaction, :debit, :credit, :statement
+
+  def initialize(statement = Statement.new)
     @date = @date
-    @credit = 0
-    @debit = 0
+    @credit = nil
+    @debit = nil
     @balance = 0
-    @transaction = []
+    @statement = statement
   end
 
   def deposit(amount)
     @credit = amount
     raise "That's a lot of money!" if amount > 3000
+
     @balance += @credit
-    @date = Time.now.strftime("%m/%d/%Y, %T")
-    add_to_transaction
+    @date = Time.now.strftime('%d/%m/%Y')
+    add_transaction
   end
 
   def withdraw(amount)
     @debit = amount
-    raise "Insufficient funds" if amount > balance
+    raise 'Insufficient funds' if amount > balance
+
     @balance -= @debit
-    @date = Time.now.strftime("%m/%d/%Y, %T")
-    add_to_transaction
+    @date = Time.now.strftime('%d/%m/%Y')
+    add_transaction
   end
 
-  def add_to_transaction
-    @transaction.push([@date, @credit, @debit, @balance])
+  def add_transaction
+    @statement.transaction.push([@date, @credit, @debit, @balance])
     reset_values
   end
 
-  def reset_values
-    @debit = 0
-    @credit = 0
+  def print_statement
+    @statement.display
   end
-    
+
+  private
+
+  def reset_values
+    @debit = nil
+    @credit = nil
+  end
 end
