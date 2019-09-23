@@ -11,6 +11,7 @@ class BankAccount
 
   def deposit(amount)
     @credit = amount
+    raise "That's a lot of money!" if amount > 3000
     @balance += @credit
     @date = Time.now.strftime("%m/%d/%Y, %T")
     add_to_transaction

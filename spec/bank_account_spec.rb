@@ -33,4 +33,8 @@ describe BankAccount do
   it 'throw an error if trying to withdraw money withour balance' do
     expect{subject.withdraw(1)}.to raise_error("Insufficient funds")
   end
+
+  it 'throw an error if trying to make a deposit bigger than 3000' do
+    expect{subject.deposit(3000)}.to raise_error("That's a lot of money!")
+  end
 end
