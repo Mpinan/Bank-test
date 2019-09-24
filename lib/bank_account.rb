@@ -28,7 +28,11 @@ class BankAccount
   end
 
   def add_transaction
-    @statement.transaction.push([@date, @credit, @debit, @balance])
+    if @credit.nil? 
+      @statement.transaction.push([@date, @credit, "%.2f" % @debit, "%.2f" % @balance])
+    else
+       @statement.transaction.push([@date, "%.2f" % @credit, @debit, "%.2f" % @balance])
+    end
     reset_values
   end
 
