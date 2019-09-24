@@ -45,9 +45,4 @@ I'd like to see a date
 - To see your transactions, type `account.print_statement`
 - You should be able to see something like this
 
-```
-date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
-```
+![alt text](https://github.com/jaitone/Bank-test/raw/master/Picture/img.png)
