@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'statement'
 
 class BankAccount
@@ -14,20 +12,18 @@ class BankAccount
   end
 
   def deposit(amount)
-    @credit = amount
+    @credit = amount.to_f
     raise "That's a lot of money!" if amount > 3000
-
     @balance += @credit
-    @date = Time.now.strftime('%d/%m/%Y')
+    @date = Time.now.strftime("%d/%m/%Y")
     add_transaction
   end
 
   def withdraw(amount)
-    @debit = amount
-    raise 'Insufficient funds' if amount > balance
-
+    @debit = amount.to_f
+    raise "Insufficient funds" if amount > @balance
     @balance -= @debit
-    @date = Time.now.strftime('%d/%m/%Y')
+    @date = Time.now.strftime("%d/%m/%Y")
     add_transaction
   end
 
@@ -46,4 +42,5 @@ class BankAccount
     @debit = nil
     @credit = nil
   end
+
 end
