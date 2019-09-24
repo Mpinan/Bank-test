@@ -3,7 +3,7 @@
 require 'statement'
 
 describe Statement do
-  let(:account) { BankAccount.new }
+  let(:account) { ATM.new }
   let(:statement) { Statement.new }
 
   it 'returns the statement as a table' do

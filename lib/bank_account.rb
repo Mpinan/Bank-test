@@ -2,7 +2,7 @@
 
 require_relative 'statement'
 
-class BankAccount
+class ATM
   attr_reader :balance, :transaction, :debit, :credit, :statement
 
   def initialize(statement = Statement.new)

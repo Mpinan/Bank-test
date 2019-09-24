@@ -3,8 +3,8 @@
 require 'bank_account'
 require 'statement'
 
-describe BankAccount do
-  let(:account) { BankAccount.new }
+describe ATM do
+  let(:account) { ATM.new }
 
   context 'from a new account' do
 
