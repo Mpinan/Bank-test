@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'bank_account'
+require 'atm'
 require 'statement'
 
 describe ATM do
