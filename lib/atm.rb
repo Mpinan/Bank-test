@@ -6,7 +6,6 @@ class ATM
   attr_reader :balance, :transaction, :debit, :credit, :statement
 
   def initialize(statement = Statement.new)
-    @date = @date
     @credit = nil
     @debit = nil
     @balance = 0
