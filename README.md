@@ -13,6 +13,15 @@ A simply Bank account code for a technical test exercise made in ruby.
 I have started by writing user stories that meets the requirements. After this, I had an idea of how I wanted my code to look like, so I started by spiking some code and making sure I was going in the right direction. 
 Then I deleted everything, and started the `Red, Green, Refractor` process using IRB and Rspec as a test framework.
 
+## Classes and methods
+
+| Class | Method | Description |
+|---|---|---|
+| Atm | .deposit, .withdraw, .check_current_balance, .print_statement | Main class where you can deposit, withdraw, print statement or check your current balance |
+| Bank | .add_transaction, .make_deposit, make_withdraw, .format_statement, .reset_values | Converts money into data and add it into a list of your trasactions to be converted later on |
+| Statement | .display | It converts the list of your transactions into a human-visible-format |
+
+
 ## User stories 
 
 ```
