@@ -2,7 +2,7 @@ require_relative 'statement'
 
 class Bank
 
-  attr_reader :statement
+  attr_reader :statement, :balance
 
   def initialize(statement = Statement.new)
     @balance = 0
@@ -11,9 +11,9 @@ class Bank
 
   def add_transaction
     if @credit.nil?
-      @statement.transaction.push([@date, @credit, @debit, @balance])
+      @statement.transaction.push([@date, @credit, format( "%.2f" % @debit), format( "%.2f" % @balance)])
     else
-      @statement.transaction.push([@date, @credit, @debit, @balance])
+      @statement.transaction.push([@date, format( "%.2f" % @credit), @debit, format( "%.2f" % @balance)])
     end
     reset_values
   end
@@ -36,12 +36,9 @@ class Bank
     @statement.display
   end
 
-  private
-
   def reset_values
     @debit = nil
     @credit = nil
   end
-
 
 end

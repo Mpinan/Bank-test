@@ -21,4 +21,8 @@ class ATM
     @bank.print_statement
   end
 
+  def check_current_balance
+    @bank.balance
+  end
+
 end
