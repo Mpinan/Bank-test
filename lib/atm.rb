@@ -17,8 +17,8 @@ class ATM
     @bank.add_transaction
   end
 
-  def print_formatted_statement
-    @bank.print_statement
+  def print_statement
+    @bank.format_statement
   end
 
   def check_current_balance

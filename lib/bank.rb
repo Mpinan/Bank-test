@@ -32,7 +32,7 @@ class Bank
     @balance -= @debit
   end
 
-  def print_statement
+  def format_statement
     @statement.display
   end
 

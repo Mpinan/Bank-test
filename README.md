@@ -39,10 +39,10 @@ I'd like to see a date
 ### How to use it
 
 - Open the console at the root of this file
-- Type `irb -r ./lib/bank_account.rb`
-- In 'irb', type: `account = Account.new`
-- Now you can `account.deposit` money or `account.withdraw` money into your account
-- To see your transactions, type `account.print_statement`
+- Type `irb -r ./lib/atm.rb`
+- In 'irb', type: `atm = atm.new`
+- Now you can `atm.deposit` money or `atm.withdraw` money into your atm
+- To see your transactions, type `atm.print_statement`
 - You should be able to see something like this
 
 ![alt text](https://github.com/jaitone/Bank-test/raw/master/Picture/img.png)
