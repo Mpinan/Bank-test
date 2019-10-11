@@ -5,11 +5,10 @@ require 'statement'
 
 describe ATM do
   let(:atm) { ATM.new }
-  let(:bank) { Bank.new}
+  let(:bank) { Bank.new }
   let(:statement) { Statement.new }
 
   context 'from a new atm' do
-
     it 'starts with a balance of 0' do
       expect(atm.check_current_balance).to eq 0.00
     end
@@ -24,7 +23,6 @@ describe ATM do
       atm.withdraw(500)
       expect(atm.check_current_balance).to eq 500.0
     end
-
   end
 
   it 'reset the values of credit and debit once added to balance' do

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require_relative 'statement'
 
 class Bank
-
   attr_reader :statement, :balance
 
   def initialize(statement = Statement.new)
@@ -11,9 +12,9 @@ class Bank
 
   def add_transaction
     if @credit.nil?
-      @statement.transaction.push([@date, @credit, format( "%.2f" % @debit), format( "%.2f" % @balance)])
+      @statement.transaction.push([@date, @credit, format(format('%.2f', @debit)), format(format('%.2f', @balance))])
     else
-      @statement.transaction.push([@date, format( "%.2f" % @credit), @debit, format( "%.2f" % @balance)])
+      @statement.transaction.push([@date, format(format('%.2f', @credit)), @debit, format(format('%.2f', @balance))])
     end
     reset_values
   end
@@ -21,6 +22,7 @@ class Bank
   def make_deposit(amount)
     @credit = amount.to_f
     raise "That's a lot of money!" if amount > 3000
+
     @date = Time.now.strftime('%d/%m/%Y')
     @balance += @credit
   end
@@ -28,6 +30,7 @@ class Bank
   def make_withdraw(amount)
     @debit = amount.to_f
     raise 'Insufficient funds' if amount > @balance
+
     @date = Time.now.strftime('%d/%m/%Y')
     @balance -= @debit
   end
@@ -36,9 +39,10 @@ class Bank
     @statement.display
   end
 
+  private 
+  
   def reset_values
     @debit = nil
     @credit = nil
   end
-
 end

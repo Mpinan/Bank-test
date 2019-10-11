@@ -10,11 +10,13 @@ class ATM
   def deposit(amount)
     @bank.make_deposit(amount)
     @bank.add_transaction
+    return amount
   end
 
   def withdraw(amount)
     @bank.make_withdraw(amount)
     @bank.add_transaction
+    return amount
   end
 
   def print_statement
@@ -24,5 +26,4 @@ class ATM
   def check_current_balance
     @bank.balance
   end
-
 end

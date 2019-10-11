@@ -9,6 +9,7 @@ class Statement
 
   def display
     puts 'date || credit || debit || balance'
+    @transaction = @transaction.last
     @transaction.map do |list|
       puts list.join(' || ')
     end
